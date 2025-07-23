@@ -7,7 +7,7 @@ import "swiper/css";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-gray-800">
+    <div className="min-h-screen bg-white text-gray-800" style={{ fontFamily: 'Aptos, sans-serif' }}>
       <header className="bg-blue-900 text-white py-6 px-8 shadow-md">
         <h1 className="text-3xl font-bold">Zaroon Zayan Enterprise</h1>
         <p className="text-lg">Healthy • Classic • Charged</p>

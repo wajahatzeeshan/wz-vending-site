@@ -72,4 +72,26 @@ img {
   text-align: center;
 }
 
+.swiper {
+  height: 260px;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  header {
+    padding: 0.5rem 1rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+} 
 /* Add more styles for your components as needed */
