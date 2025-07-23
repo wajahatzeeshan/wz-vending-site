@@ -2,6 +2,8 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export default function Home() {
   return (
@@ -23,11 +25,14 @@ export default function Home() {
           </a>
         </div>
         <div>
-          <img
-            src="/mockup.png"
-            alt="Vending Machine Mockup"
-            className="rounded-xl shadow-xl"
-          />
+          <Swiper spaceBetween={20} slidesPerView={1}>
+            <SwiperSlide>
+              <img src="/mock_1.png" alt="Vending Machine Mockup 1" className="rounded-xl shadow-xl" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="/mock_2.png" alt="Vending Machine Mockup 2" className="rounded-xl shadow-xl" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
 
