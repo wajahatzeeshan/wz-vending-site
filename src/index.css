@@ -7,35 +7,58 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Body base theme with dark mode */
 body {
   @apply font-sans leading-relaxed bg-slate-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
   margin: 0;
   padding: 0;
 }
 
-/* Header styles */
-header {
-  @apply bg-blue-600 text-white py-4 px-8 text-center shadow-md rounded-b-2xl;
+/* Sidebar */
+aside {
+  @apply bg-blue-900 text-white w-64 p-6 shadow-lg h-full;
+}
+
+/* Top navigation bar (mobile) */
+.top-bar {
+  @apply md:hidden flex justify-between items-center px-4 py-3 bg-blue-900 text-white shadow;
 }
 
 /* Main content container */
-main {
-  @apply max-w-4xl mx-auto my-8 p-8 bg-white rounded-2xl shadow-xl dark:bg-gray-800;
+main,
+.main-container {
+  @apply max-w-6xl mx-auto p-6;
 }
 
-/* Headings */
-h1, h2, h3 {
-  @apply text-blue-600 mt-0 dark:text-blue-400;
+/* Hero Section */
+.hero {
+  @apply relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white text-center;
 }
 
-/* Card component */
+.hero-overlay {
+  @apply bg-black/50 p-6 rounded-lg animate-fade-in-up;
+}
+
+/* Section styling */
+.section {
+  @apply p-8 text-center;
+}
+
+.section-light {
+  @apply bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800;
+}
+
+.section-dark {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+/* Cards */
 .card {
   @apply bg-slate-100 rounded-lg p-4 mb-6 shadow-md dark:bg-gray-700;
 }
 
-/* Reusable button style */
-.button {
+/* Buttons */
+.button,
+.btn {
   @apply inline-block bg-blue-600 text-white py-2 px-5 rounded-md text-base transition duration-200 hover:bg-blue-800 cursor-pointer;
 }
 
@@ -44,25 +67,16 @@ img {
   @apply block w-full max-w-[300px] h-auto mx-auto rounded-lg shadow-md;
 }
 
-/* Section layout */
-.section-layout {
+/* Utility layout classes */
+.flex-wrap-center {
   @apply flex flex-wrap gap-8 items-center justify-center;
 }
 
-.section-column {
-  @apply flex-1 min-w-[250px];
+.flex-col-center {
+  @apply flex flex-col gap-2 items-center;
 }
 
-/* Utility classes */
-.center-text {
-  @apply text-center;
-}
-
-.spacing-row {
-  @apply flex gap-4;
-}
-
-/* Swiper styles */
+/* Carousel */
 .swiper {
   @apply h-[260px] flex items-center justify-center;
 }
@@ -71,22 +85,10 @@ img {
   @apply flex items-center justify-center;
 }
 
-/* Responsive design */
+/* Responsive styles */
 @media (max-width: 900px) {
-  .section-layout {
-    @apply flex-col gap-4;
-  }
-
-  .section-column {
-    @apply w-full;
-  }
-
-  main {
-    @apply px-4 w-full;
-  }
-
-  header {
-    @apply py-2 px-4;
+  .main-container {
+    @apply px-4;
   }
 
   .card {
@@ -99,5 +101,32 @@ img {
 
   .swiper {
     @apply h-[180px];
+  }
+}
+
+/* Footer */
+footer {
+  @apply text-center text-sm p-4 bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300;
+}
+
+footer .social-icons {
+  @apply flex justify-center gap-4 mt-2;
+}
+
+/* Custom animation: fade-in-up */
+@layer utilities {
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out both;
   }
 }
