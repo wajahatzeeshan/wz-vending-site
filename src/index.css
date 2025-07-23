@@ -1,7 +1,10 @@
 /* Reset and base styles */
-body {
-  font-family: 'Poppins', sans-serif;
+* {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
   line-height: 1.6;
   background: #f8fafc;
   margin: 0;
@@ -9,13 +12,13 @@ body {
   color: #222;
 }
 
-
 header {
   background: #2563eb;
   color: #fff;
   padding: 1rem 2rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 0 0 12px 12px;
 }
 
 main {
@@ -58,11 +61,26 @@ h1, h2, h3 {
 
 img {
   display: block;
-  max-width: 100%;
+  max-width: 300px;
+  width: 100%;
   height: auto;
-  margin: 16px auto;
+  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Layout for main section with image and text */
+.main-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-section > div {
+  flex: 1 1 300px;
+  min-width: 250px;
 }
 
 /* Utility classes */
@@ -75,26 +93,45 @@ img {
   text-align: center;
 }
 
+/* Swiper styles */
 .swiper {
   height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .main-section {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .main-section > div {
+    width: 100%;
+    min-width: unset;
+  }
   main {
     padding: 1rem;
+    max-width: 100%;
   }
-
   header {
     padding: 0.5rem 1rem;
   }
-
   .card {
     padding: 0.75rem;
   }
-
   .button {
     width: 100%;
     text-align: center;
   }
-} 
-/* Add more styles for your components as needed */
+  .swiper {
+    height: 180px;
+  }
+}
