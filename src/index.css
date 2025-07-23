@@ -1,11 +1,14 @@
 /* Reset and base styles */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  line-height: 1.6;
   background: #f8fafc;
   margin: 0;
   padding: 0;
   color: #222;
 }
+
 
 header {
   background: #2563eb;
