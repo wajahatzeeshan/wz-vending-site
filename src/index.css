@@ -1,137 +1,103 @@
-/* Reset and base styles */
-* {
-  box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global HTML styles */
+html {
+  scroll-behavior: smooth;
 }
 
+/* Body base theme with dark mode */
 body {
-  font-family: 'Poppins', Arial, sans-serif;
-  line-height: 1.6;
-  background: #f8fafc;
+  @apply font-sans leading-relaxed bg-slate-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
   margin: 0;
   padding: 0;
-  color: #222;
 }
 
+/* Header styles */
 header {
-  background: #2563eb;
-  color: #fff;
-  padding: 1rem 2rem;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  border-radius: 0 0 12px 12px;
+  @apply bg-blue-600 text-white py-4 px-8 text-center shadow-md rounded-b-2xl;
 }
 
+/* Main content container */
 main {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  @apply max-w-4xl mx-auto my-8 p-8 bg-white rounded-2xl shadow-xl dark:bg-gray-800;
 }
 
+/* Headings */
 h1, h2, h3 {
-  color: #2563eb;
-  margin-top: 0;
+  @apply text-blue-600 mt-0 dark:text-blue-400;
 }
 
+/* Card component */
 .card {
-  background: #f1f5f9;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  @apply bg-slate-100 rounded-lg p-4 mb-6 shadow-md dark:bg-gray-700;
 }
 
+/* Reusable button style */
 .button {
-  display: inline-block;
-  background: #2563eb;
-  color: #fff;
-  padding: 0.5rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background 0.2s;
+  @apply inline-block bg-blue-600 text-white py-2 px-5 rounded-md text-base transition duration-200 hover:bg-blue-800 cursor-pointer;
 }
 
-.button:hover {
-  background: #1e40af;
-}
-
+/* Image styling */
 img {
-  display: block;
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  @apply block w-full max-w-[300px] h-auto mx-auto rounded-lg shadow-md;
 }
 
-/* Layout for main section with image and text */
-.main-section {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+/* Section layout */
+.section-layout {
+  @apply flex flex-wrap gap-8 items-center justify-center;
 }
 
-.main-section > div {
-  flex: 1 1 300px;
-  min-width: 250px;
+.section-column {
+  @apply flex-1 min-w-[250px];
 }
 
 /* Utility classes */
-.flex {
-  display: flex;
-  gap: 1rem;
+.center-text {
+  @apply text-center;
 }
 
-.center {
-  text-align: center;
+.spacing-row {
+  @apply flex gap-4;
 }
 
 /* Swiper styles */
 .swiper {
-  height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @apply h-[260px] flex items-center justify-center;
 }
 
 .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @apply flex items-center justify-center;
 }
 
-/* Responsive styles */
+/* Responsive design */
 @media (max-width: 900px) {
-  .main-section {
-    flex-direction: column;
-    gap: 1rem;
+  .section-layout {
+    @apply flex-col gap-4;
   }
-  .main-section > div {
-    width: 100%;
-    min-width: unset;
+
+  .section-column {
+    @apply w-full;
   }
+
   main {
-    padding: 1rem;
-    max-width: 100%;
+    @apply px-4 w-full;
   }
+
   header {
-    padding: 0.5rem 1rem;
+    @apply py-2 px-4;
   }
+
   .card {
-    padding: 0.75rem;
+    @apply p-3;
   }
+
   .button {
-    width: 100%;
-    text-align: center;
+    @apply w-full text-center;
   }
+
   .swiper {
-    height: 180px;
+    @apply h-[180px];
   }
 }
