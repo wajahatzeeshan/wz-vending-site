@@ -13,7 +13,7 @@ import "./index.css"; // Tailwind + global styles
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/wz-vending-site">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

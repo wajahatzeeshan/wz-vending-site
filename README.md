@@ -38,18 +38,25 @@ This is the official website for **Zaroon Zayan Enterprise**, a smart vending ma
 
 ```
 wz-vending-site/
-├── public/
-│   ├── favicon.ico
-│   ├── wz-vending-site/
-│   │   ├── mock_1.png
-│   │   └── mock_2.png
+├── public/│ 
+│   ├── logo.png
+│   ├── mock_1.png
+│   └── mock_2.png
 ├── src/
 │   ├── components/
+│   │   ├── Layout.jsx
+│   │   ├── Sidebar.jsx
+│   │   ├── MobileNavbar.jsx
+│   │   ├── DarkModeToggle.jsx
 │   │   └── ui/
-│   │       ├── button.jsx
-│   │       └── card.jsx
+│   │       ├── Button.jsx
+│   │       └── Card.jsx
 │   ├── pages/
-│   │   └── Home.jsx
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Services.jsx
+│   │   ├── Contact.jsx
+│   │   └── ThankYou.jsx
 │   ├── App.jsx
 │   ├── index.css
 │   ├── main.jsx
@@ -68,7 +75,7 @@ wz-vending-site/
 
 This project uses GitHub Actions to deploy to GitHub Pages.  
 See `.github/workflows/deploy.yml` for details.
-
+![Deploy to GitHub Pages](https://github.com/wajahatzeeshan/wz-vending-site/actions/workflows/deploy.yml/badge.svg)
 ---
 
 Feel free to contribute or open issues!

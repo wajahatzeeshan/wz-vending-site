@@ -8,12 +8,13 @@ export default function Home() {
   return (
     <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-6 text-center">
       <img
-        src="/logo.png"
+        src={import.meta.env.BASE_URL + "logo.png"}
         alt="Zaroon Vending Logo"
         className="w-24 h-24 mb-6 animate-bounce"
       />
 
       <div className="mt-12 w-full max-w-4xl">
+
   <Swiper
     modules={[Navigation, Pagination]}
     spaceBetween={20}
@@ -23,7 +24,7 @@ export default function Home() {
     loop
     className="rounded-lg shadow-lg"
   >
-    {["MOCK_1.png", "MOCK_2.png"].map((img, i) => (
+    {["mock_1.png", "mock_2.png"].map((img, i) => (
       <SwiperSlide key={i}>
         <img
           src={`/wz-vending-site/${img}`}

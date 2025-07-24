@@ -2,7 +2,7 @@
 import  Sidebar  from "./Sidebar";
 import  MobileNavbar  from "./MobileNavbar";
 import  DarkModeToggle  from "./DarkModeToggle";
-import  Outlet  from "react-router-dom";
+import  { Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
