@@ -11,39 +11,55 @@ export default function Contact() {
       <form
   action="https://formspree.io/f/abcd1234" // <-- replace with your actual Formspree endpoint
   method="POST"
-  className="bg-white rounded-xl shadow-md p-6 w-full max-w-md text-left space-y-4"
+  className="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 w-full max-w-md text-left space-y-4"
 >
-   <input type="text" name="_gotcha" style={{ display: "none" }} /> 
+  <input type="text" name="_gotcha" style={{ display: "none" }} />
+
   <div>
-    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+    <label
+      htmlFor="name"
+      className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+    >
+      Name
+    </label>
     <input
       id="name"
       name="name"
       type="text"
       required
-      className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+      className="mt-1 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
     />
   </div>
 
   <div>
-    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+    <label
+      htmlFor="email"
+      className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+    >
+      Email
+    </label>
     <input
       id="email"
       name="email"
       type="email"
       required
-      className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+      className="mt-1 w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
     />
   </div>
 
   <div>
-    <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+    <label
+      htmlFor="message"
+      className="block text-sm font-medium text-gray-700 dark:text-gray-200"
+    >
+      Message
+    </label>
     <textarea
       id="message"
       name="message"
       rows="4"
       required
-      className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+      className="w-full mt-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-blue-500"
     />
   </div>
 
