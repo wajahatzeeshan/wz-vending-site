@@ -1,60 +1,34 @@
-// src/components/MobileNavbar.jsx
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+// src/components/Layout.jsx
+import Sidebar from "./Sidebar";
+import MobileNavbar from "./MobileNavbar";
+import DarkModeToggle from "./DarkModeToggle";
+import { Outlet } from "react-router-dom";
 
-export default function MobileNavbar() {
-  const [open, setOpen] = useState(false);
-
+export default function Layout() {
   return (
-    <div className="md:hidden relative z-50">
-      {/* Top Bar */}
-      <div className="flex justify-between items-center bg-blue-600 text-white px-4 py-3 shadow">
-        <span className="text-lg font-semibold">Zaroon Vending</span>
-        <button onClick={() => setOpen(!open)} aria-label="Toggle menu">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {open ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
-      </div>
+    <>
+      {/* Mobile Top Bar (only on small screens) */}
+      <MobileNavbar />
 
-      {/* Slide-In Menu */}
-      <div
-        className={`absolute top-14 left-0 w-full bg-white dark:bg-gray-800 shadow transition-transform duration-300 ${
-          open ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
-        }`}
-      >
-        <nav className="flex flex-col py-4 text-center">
-          {[
-            { to: "/", label: "Home" },
-            { to: "/about", label: "About" },
-            { to: "/services", label: "Services" },
-            { to: "/contact", label: "Contact" },
-          ].map(({ to, label }) => (
-            <NavLink
-              key={to}
-              to={to}
-              onClick={() => setOpen(false)}
-              className={({ isActive }) =>
-                isActive
-                  ? "py-2 text-blue-600 font-semibold"
-                  : "py-2 text-gray-700 dark:text-gray-300 hover:text-blue-500"
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
-        </nav>
+      {/* Main Layout Wrapper */}
+      <div className="min-h-screen flex bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+        {/* Sidebar (visible from md breakpoint upward) */}
+        <Sidebar />
+
+        {/* Main Page Content */}
+        <div className="flex-1 ml-0 md:ml-64 flex flex-col">
+          {/* Sticky Top Header */}
+          <header className="top-bar flex justify-between items-center px-4 py-3 shadow-md bg-white dark:bg-gray-800 sticky top-0 z-50">
+            <h1 className="text-lg font-bold text-blue-700">Zaroon Vending</h1>
+            <DarkModeToggle />
+          </header>
+
+          {/* Injects page content based on route */}
+          <main className="main-container p-6">
+            <Outlet />
+          </main>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
