@@ -1,132 +1,32 @@
+/* index.css (or tailwind.css — either name works) */
+
+/* Tailwind base layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global HTML styles */
-html {
-  scroll-behavior: smooth;
-}
-
+/* Custom global styles (optional) */
 body {
-  @apply font-sans leading-relaxed bg-slate-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
-  margin: 0;
-  padding: 0;
+  @apply font-poppins bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
 }
 
-/* Sidebar */
-aside {
-  @apply bg-blue-900 text-white w-64 p-6 shadow-lg h-full;
+a {
+  @apply transition duration-200 ease-in-out;
 }
 
-/* Top navigation bar (mobile) */
-.top-bar {
-  @apply md:hidden flex justify-between items-center px-4 py-3 bg-blue-900 text-white shadow;
-}
-
-/* Main content container */
-main,
-.main-container {
-  @apply max-w-6xl mx-auto p-6;
-}
-
-/* Hero Section */
-.hero {
-  @apply relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white text-center;
-}
-
-.hero-overlay {
-  @apply bg-black/50 p-6 rounded-lg animate-fade-in-up;
-}
-
-/* Section styling */
+/* Utility helpers (optional) */
 .section {
-  @apply p-8 text-center;
+  @apply py-12 px-6;
 }
 
-.section-light {
-  @apply bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800;
+.button {
+  @apply inline-block bg-blue-600 text-white font-medium px-5 py-2 rounded-full hover:bg-blue-700;
 }
 
-.section-dark {
-  @apply bg-gray-100 dark:bg-gray-800;
+.top-bar {
+  @apply flex items-center justify-between bg-white dark:bg-gray-800 shadow px-4 py-3 sticky top-0 z-50;
 }
 
-/* Cards */
-.card {
-  @apply bg-slate-100 rounded-lg p-4 mb-6 shadow-md dark:bg-gray-700;
-}
-
-/* Buttons */
-.button,
-.btn {
-  @apply inline-block bg-blue-600 text-white py-2 px-5 rounded-md text-base transition duration-200 hover:bg-blue-800 cursor-pointer;
-}
-
-/* Image styling */
-img {
-  @apply block w-full max-w-[300px] h-auto mx-auto rounded-lg shadow-md;
-}
-
-/* Utility layout classes */
-.flex-wrap-center {
-  @apply flex flex-wrap gap-8 items-center justify-center;
-}
-
-.flex-col-center {
-  @apply flex flex-col gap-2 items-center;
-}
-
-/* Carousel */
-.swiper {
-  @apply h-[260px] flex items-center justify-center;
-}
-
-.swiper-slide {
-  @apply flex items-center justify-center;
-}
-
-/* Responsive styles */
-@media (max-width: 900px) {
-  .main-container {
-    @apply px-4;
-  }
-
-  .card {
-    @apply p-3;
-  }
-
-  .button {
-    @apply w-full text-center;
-  }
-
-  .swiper {
-    @apply h-[180px];
-  }
-}
-
-/* Footer */
-footer {
-  @apply text-center text-sm p-4 bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300;
-}
-
-footer .social-icons {
-  @apply flex justify-center gap-4 mt-2;
-}
-
-/* Custom animation: fade-in-up */
-@layer utilities {
-  @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out both;
-  }
+.main-container {
+  @apply min-h-screen p-6;
 }
