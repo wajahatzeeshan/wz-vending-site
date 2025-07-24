@@ -1,10 +1,11 @@
 export default function Contact() {
   return (
-    <section className="min-h-screen bg-gray-50 px-6 py-12 flex flex-col items-center text-center">
-      <h2 className="text-4xl font-bold text-blue-700 mb-4">Get in Touch</h2>
-      <p className="text-lg text-gray-600 mb-10 max-w-xl">
-        Have questions, need a quote, or ready to get started? We’d love to hear from you.
-      </p>
+    <section className="min-h-screen bg-gray-50 dark:bg-gray-900 px-6 py-12 flex flex-col items-center text-center">
+  <h2 className="text-4xl font-bold text-blue-700 dark:text-blue-400 mb-4">Get in Touch</h2>
+  <p className="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-xl">
+    We'd love to hear from you — drop us a message and we’ll get back soon.
+  </p>
+
 
       {/* Contact Form */}
       <form

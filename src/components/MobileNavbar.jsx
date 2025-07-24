@@ -35,10 +35,10 @@ export default function MobileNavbar() {
       >
         <nav className="flex flex-col py-4 text-center">
           {[
-            { to: "/", label: "Home" },
-            { to: "/about", label: "About" },
-            { to: "/services", label: "Services" },
-            { to: "/contact", label: "Contact" },
+            { to: import.meta.env.BASE_URL + "", label: "Home" },
+            { to: import.meta.env.BASE_URL + "about", label: "About" },
+            { to: import.meta.env.BASE_URL + "services", label: "Services" },
+            { to: import.meta.env.BASE_URL + "contact", label: "Contact" },
           ].map(({ to, label }) => (
             <NavLink
               key={to}
