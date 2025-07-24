@@ -1,3 +1,9 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 export default function Home() {
   return (
     <section className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-6 text-center">
@@ -6,6 +12,31 @@ export default function Home() {
         alt="Zaroon Vending Logo"
         className="w-24 h-24 mb-6 animate-bounce"
       />
+
+      <div className="mt-12 w-full max-w-4xl">
+  <Swiper
+    modules={[Navigation, Pagination]}
+    spaceBetween={20}
+    slidesPerView={1}
+    navigation
+    pagination={{ clickable: true }}
+    loop
+    className="rounded-lg shadow-lg"
+  >
+    {["MOCK_1.png", "MOCK_2.png"].map((img, i) => (
+      <SwiperSlide key={i}>
+        <img
+          src={`/wz-vending-site/${img}`}
+          alt={`Vending mockup ${i + 1}`}
+          className="w-full h-auto rounded-xl border"
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+        />
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</div>
+
+
 
       <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
         Zaroon Zayan Vending
