@@ -30,7 +30,7 @@ export default function Sidebar() {
       </nav>
 
       <footer className="mt-auto text-xs text-center text-gray-500 dark:text-gray-400 pt-8">
-        &copy; 2025 Zaroon Vending
+        &copy; 2025 Zaroon Zayan Vending
       </footer>
     </aside>
   );
