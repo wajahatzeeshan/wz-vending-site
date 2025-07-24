@@ -5,7 +5,7 @@ export default function Sidebar() {
   return (
     <aside className="hidden md:flex md:flex-col fixed md:w-64 h-full bg-gray-100 dark:bg-gray-800 shadow-lg p-6 z-40">
       <h1 className="text-2xl font-bold text-blue-600 mb-8 text-center">
-        Zaroon Vending
+        Zaroon Zayan Vending
       </h1>
 
       <nav className="flex flex-col gap-4">

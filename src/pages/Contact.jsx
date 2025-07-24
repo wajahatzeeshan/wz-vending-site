@@ -58,7 +58,7 @@ export default function Contact() {
       {/* Additional Contact Info */}
       <div className="mt-12 text-gray-700 text-sm space-y-2">
         <p>📧 Email: support@zaroonvending.com</p>
-        <p>📞 Phone: +44 20 1234 5678</p>
+        <p>📞 Phone: +44 7951254114</p>
         <p>📍 Location: London, UK</p>
       </div>
     </section>

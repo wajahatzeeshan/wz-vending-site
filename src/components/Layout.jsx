@@ -19,7 +19,7 @@ export default function Layout() {
         <div className="flex-1 ml-0 md:ml-64 flex flex-col">
           {/* Sticky Top Header */}
           <header className="top-bar flex justify-between items-center px-4 py-3 shadow-md bg-white dark:bg-gray-800 sticky top-0 z-50">
-            <h1 className="text-lg font-bold text-blue-700">Zaroon Vending</h1>
+            <h1 className="text-lg font-bold text-blue-700">Zaroon Zayan Vending</h1>
             <DarkModeToggle />
           </header>
 

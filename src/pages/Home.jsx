@@ -12,7 +12,15 @@ export default function Home() {
         alt="logo"
         className="w-24 h-24 mb-6 animate-bounce"
       />
+ <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 leading-tight">
+        Zaroon Zayan Vending
+      </h1>
 
+      <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-xl">
+        Premium vending solutions for workplaces, schools, gyms and beyond —
+        freshness, convenience, and style all in one.
+      </p>
+      <br/>
       <div className="w-full max-w-2xl max-h-[400px] overflow-hidden mb-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -35,15 +43,7 @@ export default function Home() {
         </Swiper>
       </div>
 
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 leading-tight">
-        Zaroon Zayan Vending
-      </h1>
-
-      <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-xl">
-        Premium vending solutions for workplaces, schools, gyms and beyond —
-        freshness, convenience, and style all in one.
-      </p>
-
+     
       <a
         href={import.meta.env.BASE_URL + "contact"}
         className="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg rounded-full shadow-md transition duration-300 ease-in-out"
