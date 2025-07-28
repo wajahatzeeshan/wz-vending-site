@@ -43,14 +43,13 @@ export default function Home() {
           ))}
         </Swiper>
       </div>
-
-     
-      <a
-        href={import.meta.env.BASE_URL + "contact"}
+      <Link
+        to="/contact"
+        // href={import.meta.env.BASE_URL + "contact"} hashrourter does not support href
         className="mt-8 inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg rounded-full shadow-md transition duration-300 ease-in-out"
       >
-        Get Started
-      </a>
+      Get Started
+      </Link>
     </section>
   );
 }
