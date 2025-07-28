@@ -15,7 +15,7 @@ export default function Contact() {
   className="bg-white dark:bg-gray-900 rounded-xl shadow-md p-6 w-full max-w-md text-left space-y-4"
 >
   <div class="g-recaptcha" data-sitekey="6LcbO5IrAAAAAGfp3BQtdYxUlKfRp4Pgz-DOatb9"></div>
-  {/* Hidden field to prevent spam */}
+  
   {/* This field should be hidden from users but will catch spam bots */} 
   <input type="text" name="_gotcha" style={{ display: "none" }} />
 
