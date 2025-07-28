@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 export default function Contact() {
@@ -9,25 +9,28 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    grecaptcha.execute("6LcbO5IrAAAAAGfp3BQtdYxUlKfRp4Pgz-DOatb9", { action: "submit" }).then((token) => {
-        const form = formRef.current;
-        const formData = new FormData(form);
-        formData.append("g-recaptcha-response", token);
+    grecaptcha.ready(() => {
+      grecaptcha
+        .execute("6LcbO5IrAAAAAGfp3BQtdYxUlKfRp4Pgz-DOatb9", { action: "submit" })
+        .then((token) => {
+          const form = formRef.current;
+          const formData = new FormData(form);
+          formData.append("g-recaptcha-response", token);
 
-        fetch(form.action, {
-          method: form.method,
-          body: formData,
-          headers: { Accept: "application/json" },
-        })
-          .then(() => {
-            alert("Message sent successfully!");
-            form.reset();
+          fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { Accept: "application/json" },
           })
-          .catch(() => alert("Oops! Something went wrong."))
-          .finally(() => setIsSubmitting(false));
-      });
-    };
-
+            .then(() => {
+              alert("Message sent successfully!");
+              form.reset();
+            })
+            .catch(() => alert("Oops! Something went wrong."))
+            .finally(() => setIsSubmitting(false));
+        });
+    });
+  };
 
   return (
     <section className="min-h-screen bg-gray-50 dark:bg-gray-900 px-6 py-12 flex flex-col items-center text-center">
@@ -129,4 +132,4 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+};
