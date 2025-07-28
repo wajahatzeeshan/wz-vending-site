@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 
+
 export default function Contact() {
   const formRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -8,8 +9,7 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    grecaptcha.ready(() => {
-      grecaptcha.execute("6LcbO5IrAAAAAGfp3BQtdYxUlKfRp4Pgz-DOatb9", { action: "submit" }).then((token) => {
+    grecaptcha.execute("6LcbO5IrAAAAAGfp3BQtdYxUlKfRp4Pgz-DOatb9", { action: "submit" }).then((token) => {
         const form = formRef.current;
         const formData = new FormData(form);
         formData.append("g-recaptcha-response", token);
@@ -26,8 +26,8 @@ export default function Contact() {
           .catch(() => alert("Oops! Something went wrong."))
           .finally(() => setIsSubmitting(false));
       });
-    });
-  };
+    };
+
 
   return (
     <section className="min-h-screen bg-gray-50 dark:bg-gray-900 px-6 py-12 flex flex-col items-center text-center">
