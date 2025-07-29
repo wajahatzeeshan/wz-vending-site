@@ -32,7 +32,7 @@ export default function Home() {
           pagination={{ clickable: true }}
           loop
         >
-          {["mock_1.png", "mock_2.png"].map((img, i) => (
+          {["mock1.png", "mock2.png"].map((img, i) => (
             <SwiperSlide key={i} className="p-4">
               <img
                 src={`${window.location.origin}${import.meta.env.BASE_URL}${img}`}
