@@ -35,7 +35,7 @@ export default function Home() {
           {["mock_1.png", "mock_2.png"].map((img, i) => (
             <SwiperSlide key={i} className="p-4">
               <img
-                src={import.meta.env.BASE_URL + img}
+                src={`${window.location.origin}${import.meta.env.BASE_URL}${img}`}
                 alt={`Vending mockup ${i + 1}`}
                 className="w-full h-full max-h-[300px] object-contain rounded-xl mx-auto"
               />
